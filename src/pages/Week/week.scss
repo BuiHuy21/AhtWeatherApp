@@ -1,0 +1,12 @@
+.week-content {
+        .week-container {
+                width                : 100%;
+                display              : grid;
+                grid-template-columns: repeat(4, 25%);
+
+                a {
+                        text-decoration: none;
+                }
+
+        }
+}

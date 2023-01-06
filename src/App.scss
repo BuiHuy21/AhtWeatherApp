@@ -1,0 +1,138 @@
+.App {
+  max-width : 1320px;
+  margin    : 30px auto;
+  height    : 90vh;
+  box-sizing: border-box;
+  display   : flex;
+
+  ///left
+  .left {
+    max-width : 25%;
+    background: #fff;
+
+
+    .content {
+      width  : 100%;
+      padding: 24px;
+
+      .search {
+
+        input {
+          border-radius: 5px;
+          padding      : 6px 16px;
+          outline      : none;
+          border       : 1px solid #ced4da;
+          width        : 100%;
+          font-weight  : 500;
+
+          &:focus {
+            color           : #212529;
+            background-color: #fff;
+            border-color    : #86b7fe;
+            outline         : 0;
+            box-shadow      : 0 0 0 0.25rem rgb(13 110 253 / 25%);
+          }
+        }
+
+
+      }
+
+      .image {
+        margin-top: 10px;
+
+        img {
+
+          width: 110px;
+        }
+      }
+    }
+
+    .daily {
+      color: #212529;
+
+      .adrr {
+        font-size  : 32px;
+        font-weight: 600;
+      }
+
+      .tmp {
+        font-size  : 40px;
+        font-weight: 600;
+      }
+
+      .time {
+        font-size  : 20px;
+        font-weight: 500;
+      }
+
+      .cloud {
+        color: #6c757d;
+      }
+
+      .humidirity {
+        color: #6c757d;
+
+      }
+    }
+
+    .dailyImg {
+      margin-top: 15px;
+
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  //right
+  .right {
+    padding         : 30px;
+    flex            : 1;
+    background-color: rgb(246, 246, 248);
+    height          : 90vh;
+    overflow        : auto;
+
+    .header {
+      width          : 100%;
+      display        : flex;
+      align-items    : center;
+      justify-content: space-between;
+
+      .nav {
+        ul {
+          li {
+            list-style-type: none;
+            display        : inline-block;
+
+            a {
+              text-decoration: none;
+            }
+
+            .nav-item {
+              margin-right: 15px;
+              color       : #6c757d;
+              font-size   : 20px;
+              font-weight : 700;
+            }
+
+            .active {
+              color        : #212529;
+              border-bottom: 3px solid #212529;
+            }
+          }
+        }
+      }
+
+      .avatar {
+        img {
+
+          width        : 45px;
+          height       : 45px;
+          border-radius: 100rem;
+
+        }
+      }
+    }
+
+  }
+}

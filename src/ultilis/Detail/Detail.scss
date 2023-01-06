@@ -1,0 +1,31 @@
+.detail {
+        background-color: #fff;
+        padding         : 15px;
+        border-radius   : 5px;
+        margin          : 20px 5px;
+
+        h2 {
+                color      : #6c757d;
+                font-size  : 20px;
+                line-height: 30px;
+                margin     : 0px 0px 16px;
+        }
+
+        .detail-main {
+                display        : flex;
+                justify-content: space-between;
+                align-items: center;
+                .detail-left {
+                        width: 50%;
+                }
+                .detail-right {
+                        width: 50%;
+                }
+                p{
+                        color: #6c757d;
+                        font-size: 16px;
+                        line-height: 24px;
+                        padding: 8px;
+                }
+        }
+}

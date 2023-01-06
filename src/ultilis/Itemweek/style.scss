@@ -1,0 +1,36 @@
+.item1 {
+        border-radius: 5px;
+        background   : #fff;
+        margin: 5px;
+        padding: 10px;
+        .title {
+                font-size: 16px;
+                color    : rgb(0 0 0/26%);
+        }
+
+        .des {
+                display       : flex;
+                align-items   : center;
+                flex-direction: column;
+
+                .icon-des {
+                        display    : flex;
+                        align-items: center;
+                        margin-top : 16px;
+                        font-size  : 50px;
+                        color      : #ffc107;
+                        img{
+                                width: 40px;
+                        }
+                }
+
+                .num {
+                        color      : #6c757d;
+                        font-size  : 16px;
+                        font-weight: 700;
+                        line-height: 42px;
+                        text-align : center;
+                }
+        }
+
+}
