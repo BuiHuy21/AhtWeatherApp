@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Img from "../../asset/banner.webp";
 import { WeatherContext } from "../../GlobalState";
 
@@ -7,6 +7,8 @@ const Left = () => {
   const [search, setSearch] = state.todayApi.search;
   const [city] = state.todayApi.city;
   const [weather] = state.todayApi.data;
+
+  const inputRef = useRef();
   const handleChang = (e) => {
     setSearch(e.target.value);
   };
@@ -30,7 +32,9 @@ const Left = () => {
     var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
   }
-
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
   return (
     <div className="left">
       <div className="content">
@@ -40,7 +44,13 @@ const Left = () => {
             placeholder="Search"
             value={search}
             onChange={(e) => handleChang(e)}
+            ref={inputRef}
           />
+          {!city?.name && (
+            <div style={{ color: "red", textAlign: "center", padding: "2px" }}>
+              Not Found City{" "}
+            </div>
+          )}
         </div>
         <div className="image">
           <img
@@ -49,7 +59,7 @@ const Left = () => {
           />
         </div>
         <div className="daily">
-          <div className="adrr">{city.name}</div>
+          <div className="adrr">{city?.name}</div>
           <div className="tmp">{weather?.current?.temp} °C</div>
           <div className="time">
             {weekday[0].toUpperCase() + weekday.substring(1)},{" "}

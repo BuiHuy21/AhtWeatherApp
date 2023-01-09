@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { WeatherContext } from "../../GlobalState";
+import dayjs from "dayjs";
 
 ChartJS.register(
   CategoryScale,
@@ -28,39 +29,26 @@ export const options = {
     legend: {
       position: "top",
     },
-    title: {
-      display: true,
-      text: "Chart.js Line Chart",
-    },
   },
 };
+function mstoTime(duration) {
+  let hours = dayjs.unix(duration).hour();
+  let minutes = dayjs.unix(duration).minute();
+  const ampm = hours >= 12 ? "pm" : "am";
+  hours %= 12;
+  hours = hours || 12;
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
 
-const labels = [
-  "10:00 am",
-  "12:00 am",
-  "2:00 am",
-  "4:00 am",
-  "6:00 am",
-  "8:00 am",
-  "10:00 am",
-  "12:00 am",
-  "2:00 am",
-  "4:00 am",
-  "6:00 am",
-  "8:00 am",
-  "10:00 am",
-  "12:00 am",
-  "2:00 am",
-  "4:00 am",
-  "6:00 am",
-  "8:00 am",
-];
+  const strTime = `${hours}:${minutes} ${ampm}`;
+  return strTime;
+}
 
 export function App() {
   const state = useContext(WeatherContext);
   const [weather] = state.todayApi.data;
-  const dataHour = weather?.hourly?.slice(0, 18);
-  // console.log(dataHour);
+  const dataHour = weather?.hourly;
+  const labels = dataHour?.map((item) => mstoTime(item.dt));
+
   const temp = dataHour?.map((item) => item.temp);
   const feelLike = dataHour?.map((item) => item.feels_like);
   const data = {

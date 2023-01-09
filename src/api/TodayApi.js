@@ -4,10 +4,10 @@ import useDebounce from "../hooks/useDebounce";
 
 const TodayApi = () => {
   const [weather, setWeather] = useState([]);
-  const [search, setSearch] = useState("Hanoi");
+  const [search, setSearch] = useState("");
   const [city, setCity] = useState([]);
   const [detail, setDetail] = useState([]);
-  const debounce = useDebounce(search, 1000);
+  const debounce = useDebounce(search ? search : "Hanoi", 1000);
   const [param, setParam] = useState(0);
 
   const getData = useRef();
@@ -17,8 +17,8 @@ const TodayApi = () => {
     );
     const data = response.status === 200 ? response.data[0] : [];
     setCity(data);
-    const lat = data.lat;
-    const lon = data.lon;
+    const lat = data?.lat;
+    const lon = data?.lon;
     // 8be346cc190753993a74e089aa7b6d57 bh
     // 84f0c05e16abc57b03ca8fa00b59f78e t3h
     // 49cc8c821cd2aff9af04c9f98c36eb74 yt

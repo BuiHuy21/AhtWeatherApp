@@ -4,6 +4,10 @@
                 display              : grid;
                 grid-template-columns: repeat(4, 25%);
 
+                .active {
+                        background: aqua;
+                }
+
                 a {
                         text-decoration: none;
                 }

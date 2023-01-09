@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
     "chart.js": "^4.1.1",
+    "dayjs": "^1.11.7",
     "faker": "^6.6.6",
     "node": "^19.3.0",
     "react": "^18.2.0",
